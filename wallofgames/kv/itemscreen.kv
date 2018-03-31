@@ -1,0 +1,15 @@
+<ItemScreen>:
+    name: 'ItemScreen'
+
+    Image:
+        source: 'palette.png'
+        size_hint: None, None
+        size: '100dp', '100dp'
+        pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+
+    Button:
+        size_hint: 1, None
+        height: '40dp'
+        text: 'Exit the app...'
+        on_release: app.stop()
+        pos_hint: {'center_x': 0.5, 'y': 0}

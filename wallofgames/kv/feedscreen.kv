@@ -1,0 +1,19 @@
+<FeedScreen>:
+    name: 'FeedScreen'
+
+    RecycleView:
+        id: rv
+        data: []
+        viewclass: 'ItemView'
+
+        RecycleBoxLayout:
+            default_size: None, dp(60)
+            default_size_hint: 1, None
+            orientation: 'vertical'
+            size_hint_y: None
+            height: self.minimum_height
+            spacing: '5dp'
+            padding: '10dp'
+
+<ItemView@Button>:
+    on_release: app.root.get_screen('FeedScreen').show_item()
