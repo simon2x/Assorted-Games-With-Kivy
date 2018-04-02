@@ -1,18 +1,5 @@
 #:import __version__ version.__version__
 
-# #:import LabelB LabelB
-
-<FitLabel>:
-    bcolor: 1, 1, 1, 1
-    canvas.before:
-        Color:
-            rgba: self.bcolor
-        Rectangle:
-            pos: self.pos
-            size: self.size
-    on_size: self.on_texture_size()
-
-
 <MenuScreen>:
     name: 'MenuScreen'
     gamebox: 'gamebox'
@@ -21,73 +8,38 @@
     BoxLayout:
         size_hint: .9, .1
         pos_hint: {'center_x':.5, 'center_y':.9}
-        Button:
-            background_color: [1,1,1,1]
+        MenuGameButton:
+            color_bg: [0.1,0.1,0.8,1]
             background_normal: ''
-            color: 0,0,0,1
+            color: 1,1,1,1
             markup: True
             font_size: 50
-            text: "[font=Saniretro]Wall of Games[/font]"
+            text: "[font=Saniretro]Assorted Games With Kivy[/font]"
        
     ScrollView:        
         size_hint: .8, .6
         pos_hint: {'center_x':.5, 'center_y':.5}
         GridLayout:
             id: gridLayout
-            cols: 3
+            cols: 4
             spacing: 25
             size_hint_y: None
             height: self.minimum_height
             # size_hint: .4, .5
             # pos_hint: {'center_x':.5, 'center_y':.5}
                             
-            LabelB:
+            MenuGameButton:
                 label: 'Classic Pong'
                 size_hint_y: None
-                background_color: [1,1,1,1]
-                background_normal: ''
-                # color: 1,1,0,1
-                markup: True
-                font_size: 50
+                color_bg: [1,1,1,1]
+                color: 0,0,0,1
                 text: "{0}".format(self.label)
-                # text: "[font=Saniretro]{0}[/font]".format(self.label)
-                # on_release: root.play("{0loved}".format(self.label))    
-                
-            LabelButton:
-                label: 'Classic Pong'                
-                background_color: [1,1,1,1]
-                background_normal: ''
-                color: 1,1,0,1
-                text: "{0}".format(self.label)
-                # text: "[font=Saniretro]{0}[/font]".format(self.label)
-                on_size: self.on_texture_size()
-                # on_release: root.play("{0}".format(self.label))    
-                
-            Button:
+                on_release: root.play("{0}".format(self.label))  
+            
+            MenuGameButton:
                 label: 'Future Pong'
                 size_hint_y: None
-                background_color: [1,1,1,1]
-                background_normal: ''
-                color: 0,0,0,1
-                markup: True
-                font_size: 70                
-                text: "[font=Saniretro]{0}[/font]".format(self.label)
-                on_release: root.play("{0}".format(self.label))    
-                
-            Button:
-                label: 'Invaders'
-                size_hint_y: None
-                background_color: [1,1,1,1]
-                background_normal: ''
-                color: 0,0,0,1
-                markup: True
-                font_size: 70                
-                text: "[font=Saniretro]{0}[/font]".format(self.label)
-                on_release: root.play("{0}".format(self.label))    
-            Button:
-                label: 'Future Pong'
-                size_hint_y: None
-                background_color: [1,1,1,1]
+                color_bg: [1,1,1,1]
                 background_normal: ''
                 color: 0,0,0,1
                 markup: True
@@ -95,19 +47,41 @@
                 text: "[font=Saniretro]{0}[/font]".format(self.label)
                 on_release: root.play("{0}".format(self.label))
                 
-            Button:
+            MenuGameButton:
+                label: 'Invaders'
                 size_hint_y: None
-                background_color: [1,1,1,1]
+                color_bg: [1,1,1,1]
+                background_normal: ''
+                color: 0,0,0,1
+                markup: True
+                font_size: 70                
+                text: "[font=Saniretro]{0}[/font]".format(self.label)
+                on_release: root.play("{0}".format(self.label))    
+            
+            
+            MenuGameButton:
+                size_hint_y: None
+                color_bg: [1,1,1,1]
                 background_normal: ''
                 color: 0,0,0,1
                 markup: True
                 font_size: 70
-                text: "[font=Saniretro]. Pong[/font]"
+                text: "[font=Saniretro]Pairs[/font]"
                 on_release: root.play()
              
-            Button:
+            MenuGameButton:
                 size_hint_y: None
-                background_color: [1,1,1,1]
+                color_bg: [1,1,1,1]
+                background_normal: ''
+                color: 0,0,0,1
+                markup: True
+                font_size: 70
+                text: "[font=Saniretro]Higher or Lower[/font]"
+                on_release: root.play()
+                
+            MenuGameButton:
+                size_hint_y: None
+                color_bg: [1,1,1,1]
                 background_normal: ''
                 color: 0,0,0,1
                 markup: True
@@ -115,16 +89,33 @@
                 text: "[font=Saniretro]Jetman[/font]"
                 on_release: root.login()
                     
-            Button:
+            MenuGameButton:
                 size_hint_y: None
-                background_color: [1,1,1,1]
-                background_normal: ''
+                color_bg: [1,1,1,1]
                 color: 0,0,0,1
-                markup: True
-                font_size: 70
                 text: "[font=Saniretro]The Boxer[/font]"
-                on_release: root.login()
-            
+                on_release: root.login()    
+                
+            MenuGameButton:
+                size_hint_y: None
+                color_bg: [1,1,1,1]
+                color: 0,0,0,1
+                text: "[font=Saniretro]Hangman[/font]"
+                on_release: root.login()   
+           
+            MenuGameButton:
+                size_hint_y: None
+                color_bg: [1,1,1,1]
+                color: 0,0,0,1
+                text: "[font=Saniretro]Quiz Night[/font]"
+                on_release: root.login() 
+                              
+            MenuGameButton:
+                size_hint_y: None
+                color_bg: [1,1,1,1]
+                color: 0,0,0,1
+                text: "[font=Saniretro]Quiz Night[/font]"
+                on_release: root.login() 
                               
     BoxLayout:
         size_hint: .2, .05
@@ -135,7 +126,9 @@
             color: 0,0,0,1
             markup: True
             font_size: 30
-            text: "[font=Saniretro]v{0}[/font]".format(__version__)
+            text: "[font=Saniretro]Exit[/font]".format(__version__)
+            # on_release: App.get_running_app().stop()
+            on_release: app.stop()
             
     BoxLayout:
         size_hint: .2, .05
@@ -149,15 +142,13 @@
             text: "[font=Saniretro]Options[/font]".format(__version__)
             
     BoxLayout:
-        size_hint: .25, .05
-        pos_hint: {'center_x':.85, 'center_y':.85}
-        Button:
-            background_color: [.5,1,1,1]
-            background_normal: ''
+        size_hint: .2, .05
+        pos_hint: {'center_x':.9, 'center_y':.85}
+        MenuGameButton:
+            color_bg: [.5,.6,1,1]
             color: 0,0,0,1
-            markup: True
-            font_size: 30
-            text: "[font=Saniretro]Powered by Kivy[/font]".format(__version__)
+            scale_factor: 0.8
+            text: "[font=Saniretro]v{0}[/font]".format(__version__)
 
 
             

@@ -8,8 +8,6 @@ from kivy.clock import Clock
 from kivy.uix.screenmanager import ScreenManager
 from screens.startscreen import StartScreen
 
-
-
 __version__ = "1.0.0"
 
 class AppScreenManager(ScreenManager):

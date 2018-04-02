@@ -1,0 +1,10 @@
+
+<FittedLabel>:
+    color_bg: 1, 0, 0, 1
+    canvas.before:
+        Color:
+            rgba: self.color_bg
+        Rectangle:
+            pos: self.pos
+            size: self.size
+    on_size: self.on_texture_size()
